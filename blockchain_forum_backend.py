@@ -269,6 +269,11 @@ def api_export_posts():
 def api_export_comments():
     comments = export_comments_all()
     return Response(json.dumps(comments, indent=2, ensure_ascii=False), content_type="application/json")
+
+from flask import send_file
+@app.route("/download/forum.db", methods=["GET"])
+def download_db():
+    return send_file(DB_PATH, as_attachment=True, download_name='forum.db', mimetype='application/octet-stream')
 # ========= MAIN =========
 if __name__ == "__main__":
     init_db()

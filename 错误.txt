@@ -1,0 +1,14 @@
+▶ 发帖: 201 {'post_id': 1, 'status': 'ok'}
+▶ 评论: 201 {'comment_id': 1, 'status': 'ok'}
+▶ 评论: 201 {'comment_id': 2, 'status': 'ok'}
+▶ 发帖: 201 {'post_id': 2, 'status': 'ok'}
+▶ 查询所有帖子: 200
+[{'address': '585815f8758d313fc4a5a9b2b6b1a97f94ca623b7d31f5a444d56258c901b51a', 'block_hash': 'd02a18641332de0bd4f66422dc6fc565ca43ff4e6f1e35fcc9319028d71d6a10', 'comments_count': 2, 'content': 'Test blockchain post.', 'id': 1, 'prev_hash': 'GENESIS', 'timestamp': 1765939776, 'title': 'Hello World'}, {'address': '585815f8758d313fc4a5a9b2b6b1a97f94ca623b7d31f5a444d56258c901b51a', 'block_hash': '161d6ac9d56a457bae5c364f3021b543fea050bc844bd3e3e5c1aabaf8875969', 'comments_count': 0, 'content': 'This is another post.', 'id': 2, 'prev_hash': 'd02a18641332de0bd4f66422dc6fc565ca43ff4e6f1e35fcc9319028d71d6a10', 'timestamp': 1765939776, 'title': 'Second post'}]
+▶ 查询帖子 1（含评论）: 200
+{'address': '585815f8758d313fc4a5a9b2b6b1a97f94ca623b7d31f5a444d56258c901b51a', 'block_hash': 'd02a18641332de0bd4f66422dc6fc565ca43ff4e6f1e35fcc9319028d71d6a10', 'comments': [{'address': '585815f8758d313fc4a5a9b2b6b1a97f94ca623b7d31f5a444d56258c901b51a', 'block_hash': 'c09782779a97613b342f130cda440ec987cc42afaf41822532c9f4139c401ced', 'content': 'first reply', 'id': 1, 'post_id': 1, 'prev_hash': 'GENESIS', 'timestamp': 1765939776}, {'address': '585815f8758d313fc4a5a9b2b6b1a97f94ca623b7d31f5a444d56258c901b51a', 'block_hash': '967e0c6346cf5550cd7dee00c03cf868da3e1af8197f5cc3ee8fa85a2bda72ed', 'content': 'second reply', 'id': 2, 'post_id': 1, 'prev_hash': 'c09782779a97613b342f130cda440ec987cc42afaf41822532c9f4139c401ced', 'timestamp': 1765939776}], 'content': 'Test blockchain post.', 'id': 1, 'prev_hash': 'GENESIS', 'timestamp': 1765939776, 'title': 'Hello World'}
+▶ [错误测试] 缺少字段
+400 {'error': 'missing fields'}
+▶ [错误测试] 签名错误
+400 {'error': 'invalid signature'}
+▶ [错误测试] 无此 post_id 评论
+▶ 评论: 404 {'error': 'post not found'}
